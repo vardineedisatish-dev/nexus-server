@@ -13,7 +13,10 @@ import userRoutes from './routes/userRoutes.js';
 
 const app = express();
 
-app.use(cors());
+app.use(cors({
+  origin: "https://nexus-server-fn1s.onrender.com/",
+  credentials: true,
+}));
 app.use(express.json());
 
 app.get('/api/health', (_req, res) => {
